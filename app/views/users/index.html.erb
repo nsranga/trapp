@@ -1,7 +1,7 @@
 
 <h4> All Users </h4>
 
-<%= form_tag users_path, :method => :put do %>
+<%= form_tag new_user_path, :method => :get do %>
 
 <table class="table table-striped">    
   <tr> 
@@ -41,6 +41,6 @@
   <% end %> 
 </table>
 
-<%= submit_tag "None" %> 
+<%= submit_tag "Sign Up"  %> 
 
 <% end %>
