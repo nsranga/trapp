@@ -1,4 +1,46 @@
-<ul class="nav nav-tabs">
-    <li class="active"><a href="#">Your Travel Requests</a></li>
-    <li><a href="#">Requests waiting Approval</a></li>
-</ul>
+
+<h4> All Users </h4>
+
+<%= form_tag users_path, :method => :put do %>
+
+<table class="table table-striped">    
+  <tr> 
+    <th> Email </th> 
+    <th> First Name </th> 
+    <th> Last Name </th> 
+    <th> Contact (Cell #) </th>
+    <th> Edit </th> 
+    <th> View </th>
+    <th> Delete</th> 
+  </tr> 
+
+  <% @users.each do |user| %>
+  <tr> 
+    <td>
+      <%= user.email %> 
+    </td>
+  	<td>
+      <%= user.email %> 
+  	</td>
+  	 <td>
+      <%= user.email %> 
+  	</td>
+  	<td>
+      <%= user.email %> 
+  	</td>
+   	<td>
+      <%= link_to "Edit", edit_user_path(user) %>
+  	</td>
+  	<td>
+      <%= link_to "Show", user_path(user) %>
+  	</td>
+  	  	<td>
+      <%= link_to "Delete", user_path(user) %>
+  	</td>
+  </tr>
+  <% end %> 
+</table>
+
+<%= submit_tag "None" %> 
+
+<% end %>
