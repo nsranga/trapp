@@ -1,14 +1,18 @@
 class SessionsController < ApplicationController
+
+  skip_before_filter :verify_authenticity_token
+
   def new
   end
 
   def create
-    user = User.find_by_email(params[:email])
-    if user && user.authenticate(params[:password])
-      session[:user_id] = user.id
-      redirect_to users_path, notice: "Logged in!"
+    @user = User.find_by_email(params[:email])
+    if @user && @user.authenticate(params[:password])
+        session[:user_id] = @user.id
+       # flash[:notice] = "Welcome back, #{@user.email}!"
+        redirect_to root_url
     else
-      flash.now.alert = "Email or password is invalid."
+      redirect_to login_url, notice: "Email or password is invalid."
     end
   end
 
@@ -18,3 +22,4 @@ class SessionsController < ApplicationController
   end
 
 end 
+ 
