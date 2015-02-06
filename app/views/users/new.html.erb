@@ -2,7 +2,8 @@
 <%= bootstrap_form_for(@user, layout: :horizontal, label_col: "col-sm-2", control_col: "col-sm-3") do |f| %>
   <%= f.email_field :email %>
   <%= f.password_field :password %>
-  <%= f.password_field :password_confirmation %>
+  <%= f.password_field :password_confirmation %>   
+  <%= f.collection_select :role, User::ROLES, :to_s, :humanize %>
   <%= f.form_group do %>
   <%= f.submit "Sign Up" %>
   <% end %>
