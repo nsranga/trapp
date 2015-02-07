@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
 
   def index
-    @users = User.limit(5)
+    @users = User.limit(10)
           #session[:current_user_id] = 11
   end
   
