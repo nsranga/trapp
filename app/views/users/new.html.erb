@@ -7,6 +7,6 @@
   <%= f.text_field :last_name, hide_label: :true, placeholder: "Last Name" %>
   <%= f.text_field :supervisor, hide_label: :true, placeholder: "Supervisor"  %>
   <%= f.text_field :phone, hide_label: :true, placeholder: "Phone"  %>  
-  <%= f.collection_select :role, User::ROLES, :to_s, :humanize, hide_label: :true %>
+  <%= f.collection_select :roles, User::ROLES, :to_s, :humanize, hide_label: :true %>
   <%= f.submit "Sign Up" %>
 <% end %>
