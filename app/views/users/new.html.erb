@@ -1,14 +1,12 @@
 
-<%= bootstrap_form_for(@user, layout: :horizontal, label_col: "col-sm-2", control_col: "col-sm-3") do |f| %>
-  <%= f.email_field :email %>
-  <%= f.password_field :password %>
-  <%= f.password_field :password_confirmation %> 
-  <%= f.text_field :first_name %>
-  <%= f.text_field :last_name %>
-  <%= f.text_field :supervisor %>
-  <%= f.text_field :phone %>  
-  <%= f.collection_select :role, User::ROLES, :to_s, :humanize %>
-  <%= f.form_group do %>
+<%= bootstrap_form_for(@user, layout: :horizontal, label_col: "col-sm-0", control_col: "col-sm-3") do |f| %>
+  <%= f.email_field :email, hide_label: :true, placeholder: "E-mail id :   xyz@abc.com" %>
+  <%= f.password_field :password, hide_label: :true, placeholder: "Password"  %>
+  <%= f.password_field :password_confirmation, hide_label: :true, placeholder: "Password Confirmation"  %> 
+  <%= f.text_field :first_name, hide_label: :true, placeholder: "First Name"  %>
+  <%= f.text_field :last_name, hide_label: :true, placeholder: "Last Name" %>
+  <%= f.text_field :supervisor, hide_label: :true, placeholder: "Supervisor"  %>
+  <%= f.text_field :phone, hide_label: :true, placeholder: "Phone"  %>  
+  <%= f.collection_select :role, User::ROLES, :to_s, :humanize, hide_label: :true %>
   <%= f.submit "Sign Up" %>
-  <% end %>
 <% end %>
