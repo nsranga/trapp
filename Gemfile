@@ -1,5 +1,8 @@
 source 'https://rubygems.org'
 
+# declarative auth
+gem 'declarative_authorization', '~> 0.5.7' 
+
 # installing bootstrap 
 gem 'bootstrap-sass', '~> 3.2.0'
 

@@ -60,6 +60,7 @@ GEM
     columnize (0.9.0)
     debug_inspector (0.0.2)
     debugger-linecache (1.2.0)
+    declarative_authorization (0.5.7)
     erubis (2.7.0)
     execjs (2.2.2)
     globalid (0.3.0)
@@ -161,6 +162,7 @@ DEPENDENCIES
   bootstrap_form
   byebug
   coffee-rails (~> 4.1.0)
+  declarative_authorization (~> 0.5.7)
   jbuilder (~> 2.0)
   jquery-rails
   rails (= 4.2.0)

@@ -10,6 +10,7 @@ class User < ActiveRecord::Base
   ROLES = %w[admin employee manager hr_exec]
 
   def role_symbols
-    [role.to_sym]
+	%i[admin employee manager hr_exec]
   end
+
 end
