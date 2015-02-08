@@ -11,7 +11,7 @@ class ApplicationController < ActionController::Base
   before_filter :set_current_user
 
   def user_params
-      params.require(:user).permit(:email, :password, :password_confirmation, :role, :first_name, :last_name, :supervisor, :phone)
+      params.require(:user).permit(:email, :password, :password_confirmation, :roles, :first_name, :last_name, :supervisor, :phone)
   end
 
   protected
@@ -36,7 +36,7 @@ class ApplicationController < ActionController::Base
   def set_current_user
     Authorization.current_user = current_user
   end
-  
+
   private
 
   def current_user
