@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  
+
   # provided by declarative authorization gen
   filter_resource_access
 
@@ -14,6 +14,7 @@ class UsersController < ApplicationController
   end
   
   def create
+    params.permit!
     @user = User.new(user_params)
     if @user.save
       #session[:user_id] = @user.id
@@ -22,4 +23,5 @@ class UsersController < ApplicationController
       render "new"
     end
   end
+
 end

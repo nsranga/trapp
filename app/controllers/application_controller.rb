@@ -10,10 +10,11 @@ class ApplicationController < ActionController::Base
 
   before_filter :set_current_user
 
-  def user_params
-      params.require(:user).permit(:email, :password, :password_confirmation, :roles, :first_name, :last_name, :supervisor, :phone)
-  end
 
+  def user_params 
+    params.require(:user).permit(:email, :password, :password_confirmation, :first_name, :last_name, :supervisor, :phone, :roles)
+  end 
+  
   protected
   # There are multiple ways of handling authorization failures.  
   # One is to implement a permission denied method as shown below.  
@@ -46,5 +47,5 @@ class ApplicationController < ActionController::Base
 
   def authorize
     redirect_to login_url, alert: "Not authorized" if current_user.nil?
-    end
+  end
 end
