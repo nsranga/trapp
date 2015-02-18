@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
 
   # provided by declarative authorization gen
-  filter_resource_access
+  #filter_resource_access
 
   def index
     @users = User.limit(10)

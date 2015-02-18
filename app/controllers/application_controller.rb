@@ -8,13 +8,13 @@ class ApplicationController < ActionController::Base
   # for declarative authorizaiton to know current user 
 #  before_filter { |c| Authorization.current_user = c.current_user }
 
-  before_filter :set_current_user
+  #before_filter :set_current_user
 
 
   def user_params 
     params.require(:user).permit(:email, :password, :password_confirmation, :first_name, :last_name, :supervisor, :phone, :roles)
   end 
-  
+
   protected
   # There are multiple ways of handling authorization failures.  
   # One is to implement a permission denied method as shown below.  
@@ -34,9 +34,9 @@ class ApplicationController < ActionController::Base
   # set_current_user sets the global current user for this request.  This
   # is used by model security that does not have access to the
   # controller#current_user method.  It is called as a before_filter.
-  def set_current_user
-    Authorization.current_user = current_user
-  end
+  #def set_current_user
+   # Authorization.current_user = current_user
+  #end
 
   private
 

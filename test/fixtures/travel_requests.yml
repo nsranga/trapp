@@ -1,0 +1,43 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  travel_type: MyString
+  trip_end_date: 2015-02-17
+  trip_depart: 2015-02-17 23:45:00
+  trip_return: 2015-02-17 23:45:00
+  onward_mode: MyString
+  onward_flight_class: MyString
+  onward_train_class: MyString
+  onward_book_by: MyString
+  return_mode: MyString
+  return_flight_class: MyString
+  return_train_class: MyString
+  return_book_by: MyString
+  supervisor: MyString
+  employee_cell: MyString
+  alternate_approver: MyString
+  alternate_approver_email: MyString
+  reason_for_travel: MyText
+  purpose_of_travel: MyString
+  accommodation_required: false
+
+two:
+  travel_type: MyString
+  trip_end_date: 2015-02-17
+  trip_depart: 2015-02-17 23:45:00
+  trip_return: 2015-02-17 23:45:00
+  onward_mode: MyString
+  onward_flight_class: MyString
+  onward_train_class: MyString
+  onward_book_by: MyString
+  return_mode: MyString
+  return_flight_class: MyString
+  return_train_class: MyString
+  return_book_by: MyString
+  supervisor: MyString
+  employee_cell: MyString
+  alternate_approver: MyString
+  alternate_approver_email: MyString
+  reason_for_travel: MyText
+  purpose_of_travel: MyString
+  accommodation_required: false
