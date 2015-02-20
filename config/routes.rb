@@ -6,6 +6,7 @@ Rails.application.routes.draw do
 
   resources :sessions
   resources :users
+  resources :travel_requests
   root "users#index" 
 
   # The priority is based upon order of creation: first created -> highest priority.

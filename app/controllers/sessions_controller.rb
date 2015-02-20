@@ -11,7 +11,7 @@ class SessionsController < ApplicationController
     if @user && @user.authenticate(params[:password])
         session[:user_id] = @user.id
        # flash[:notice] = "Welcome back, #{@user.email}!"
-        redirect_to root_url
+        redirect_to travel_requests_path
     else
       redirect_to login_url, notice: "Email or password is invalid."
     end
@@ -23,4 +23,4 @@ class SessionsController < ApplicationController
   end
 
 end 
- 
+   
