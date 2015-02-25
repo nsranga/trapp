@@ -1,1 +1,43 @@
-test !!
+<%= form_tag new_travel_request_path, :method => :get do %>
+
+<table class="table table-striped">    
+  <tr> 
+    <th> ID </th> <th> Travel Type </th> <th> Trip Depart Date </th> <th> Trip End Date </th> <th> Onward Mode </th> <th> Edit </th> <th> View </th>
+  </tr> 
+
+    <tr> 
+
+  <% if @travel_request.nil?  %>
+    <% @travel_requests.each do |tr| %>
+    <tr> 
+    <td>
+      <%= tr.id %> 
+    </td>
+    <td>
+      <%= tr.travel_t %> 
+    </td>
+  	<td>
+      <%= tr.trip_depart %> 
+  	</td>
+  	<td>
+      <%= tr.trip_end_date%> 
+  	</td>
+  	<td>
+      <%= tr.onward_mode %> 
+  	</td>
+   	<td>
+      <%= link_to "Edit", edit_travel_request(tr) %>
+  	</td>
+  	<td>
+      <%= link_to "View", travel_request_path(tr) %>
+    <% end %>
+  <% else %>
+     <td>
+      No travel requests found.
+     </td>
+  <% end %> 
+    </tr>
+</table>
+
+<%= submit_tag "Create Travel Request" %> 
+<% end %>

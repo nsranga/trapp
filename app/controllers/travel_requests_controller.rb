@@ -3,6 +3,7 @@ class TravelRequestsController < ApplicationController
 
   def index
     @travel_request = TravelRequest.all
+    @travel_request = TravelRequest.new
   end
  
   def show
@@ -18,7 +19,7 @@ class TravelRequestsController < ApplicationController
   end
  
   def create
-    @travel_request = TravelRequest.new(TravelRequest_params)
+    @travel_request = TravelRequest.new(travel_request_params)
  
     if @travel_request.save
       redirect_to @travel_request

@@ -1,0 +1,15 @@
+<h2>Create a Travel Request </h2>
+
+<%= bootstrap_form_for(@travel_request, layout: :horizontal, label_col: "col-sm-2", control_col: "col-md-3") do |f| %>
+  <p>
+    <%= f.text_field :travel_type  %>
+  </p>
+
+  <p>
+    <%= f.date_select :trip_end_date %>
+  </p>
+
+  <p>
+    <%= f.submit "Create" %>
+  </p>
+<% end %>
