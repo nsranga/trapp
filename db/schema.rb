@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150217181500) do
+ActiveRecord::Schema.define(version: 20150307064350) do
 
   create_table "travel_requests", force: :cascade do |t|
     t.string   "travel_type"
@@ -35,6 +35,8 @@ ActiveRecord::Schema.define(version: 20150217181500) do
     t.boolean  "accommodation_required"
     t.datetime "created_at",               null: false
     t.datetime "updated_at",               null: false
+    t.string   "from_city"
+    t.string   "to_city"
   end
 
   create_table "users", force: :cascade do |t|

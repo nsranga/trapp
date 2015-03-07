@@ -1,9 +1,13 @@
-<h3>New Travel Request </h3>
 
-<h4> TRAVEL REQUEST DETAILS </h4>
+<h4> TRAVEL DETAILS </h4>
 
 <%= bootstrap_form_for(@travel_request, layout: :horizontal, label_col: "col-sm-2", control_col: "col-md-3") do |f| %>
   <p> <%= f.text_field :travel_type  %> </p>
   <p> <%= f.date_select :trip_end_date %> </p>
+  <p> <%= f.datetime_select :trip_depart %> </p>
+  <p> <%= f.datetime_select :trip_return %> </p>
+  <p> <%= f.text_field :from_city  %> </p>
+  <p> <%= f.text_field :to_city  %> </p>
+  
   <p> <%= f.submit "Create" %> </p>
-<% end %>
+<% end %> 
