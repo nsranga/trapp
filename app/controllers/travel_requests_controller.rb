@@ -2,8 +2,7 @@ class TravelRequestsController < ApplicationController
  
 
   def index
-    @travel_request = TravelRequest.all
-    @travel_request = TravelRequest.new
+    @travel_requests = TravelRequest.all
   end
  
   def show
@@ -22,7 +21,7 @@ class TravelRequestsController < ApplicationController
     @travel_request = TravelRequest.new(travel_request_params)
  
     if @travel_request.save
-      redirect_to @travel_request
+      redirect_to travel_requests_path
     else
       render 'new'
     end
@@ -47,6 +46,6 @@ class TravelRequestsController < ApplicationController
  
   private
     def travel_request_params
-      params.require(:TravelRequest).permit(:travel_type, :trip_end_date)
+      params.require(:travel_request).permit(:travel_type, :trip_end_date)
     end
 end
