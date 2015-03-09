@@ -1,13 +1,22 @@
 
-<h4> TRAVEL DETAILS </h4>
+<h4> TRAVEL DETAILS <small> for creating a Travel Request </small> </h4> 
 
-<%= bootstrap_form_for(@travel_request, layout: :horizontal, label_col: "col-sm-2", control_col: "col-md-3") do |f| %>
-  <p> <%= f.text_field :travel_type  %> </p>
-  <p> <%= f.date_select :trip_end_date %> </p>
-  <p> <%= f.datetime_select :trip_depart %> </p>
-  <p> <%= f.datetime_select :trip_return %> </p>
-  <p> <%= f.text_field :from_city  %> </p>
-  <p> <%= f.text_field :to_city  %> </p>
+<%= bootstrap_form_for(@travel_request, layout: :horizontal) do |f| %>
+
+  <div class="row">
+   <div class="col-md-6"> <%= f.text_field :travel_type, label: "Travel Type" %> </div>
+    <div class="col-md-6">  <%= f.date_select :trip_end_date, label: "Trip Ends" %> </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-6"> <%= f.datetime_select :trip_depart %> </div>
+    <div class="col-md-6">  <%= f.datetime_select :trip_return %> </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-6"> <%= f.text_field :from_city %> </div>
+    <div class="col-md-6"> <%= f.text_field :to_city %> </div>
+  </div>
   
-  <p> <%= f.submit "Create" %> </p>
+  <%= f.submit "Create Travel Request" %> 
 <% end %> 
