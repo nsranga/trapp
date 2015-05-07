@@ -3,14 +3,14 @@
 
 <%= bootstrap_form_for(@travel_request, layout: :horizontal) do |f| %>
 
-<%= f.text_field :travel_type, label: "Travel Type" %> 
+<%= f.select :travel_type, [["Round Trip", 1], ["One Way", 2]], {label: "Travel Type"}, { class: "selectpicker" } %> 
 <%= f.datetime_local_field :trip_end_date %> 
 <%= f.datetime_local_field :trip_depart %> 
 <%= f.datetime_local_field :trip_return %> 
 
-<%= f.select :onward_mode, [[1, "Flight"], [2, "Train"], [3, "Bus"]], {label: "Choose travel mode"}, { class: "selectpicker" } %> 
-<%= f.datetime_local_field :onward_flight_class%> 
-<%= f.datetime_local_field :onward_train_class %> 
+<%= f.select :onward_mode, [["Flight", 1], ["Train", 2], ["Bus", 3]], {label: "Choose travel mode"}, { class: "selectpicker" } %> 
+<%= f.select :onward_flight_class, [["Business", 1], ["Economy", 2]], {label: "Onward flight class"}, { class: "selectpicker" }%> 
+<%= f.select :onward_train_class, [["1 AC", 1], ["II AC", 2], ["III AC", 3]], {label: "Onward train class"}, { class: "selectpicker" } %> 
 <%= f.datetime_local_field :onward_book_by %> 
 <%= f.datetime_local_field :return_mode %> 
 <%= f.datetime_local_field :return_flight_class %> 
