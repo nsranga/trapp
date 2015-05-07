@@ -1,22 +1,30 @@
-
+  
 <h4> TRAVEL DETAILS <small> for creating a Travel Request </small> </h4> 
 
 <%= bootstrap_form_for(@travel_request, layout: :horizontal) do |f| %>
 
-  <div class="row">
-   <div class="col-md-6"> <%= f.text_field :travel_type, label: "Travel Type" %> </div>
-    <div class="col-md-6">  <%= f.date_select :trip_end_date, label: "Trip Ends" %> </div>
-  </div>
+<%= f.text_field :travel_type, label: "Travel Type" %> 
+<%= f.datetime_local_field :trip_end_date %> 
+<%= f.datetime_local_field :trip_depart %> 
+<%= f.datetime_local_field :trip_return %> 
 
-  <div class="row">
-    <div class="col-md-6"> <%= f.datetime_select :trip_depart %> </div>
-    <div class="col-md-6">  <%= f.datetime_select :trip_return %> </div>
-  </div>
-
-  <div class="row">
-    <div class="col-md-6"> <%= f.text_field :from_city %> </div>
-    <div class="col-md-6"> <%= f.text_field :to_city %> </div>
-  </div>
-  
-  <%= f.submit "Create Travel Request" %> 
+<%= f.select :onward_mode, [[1, "Flight"], [2, "Train"], [3, "Bus"]], {label: "Choose travel mode"}, { class: "selectpicker" } %> 
+<%= f.datetime_local_field :onward_flight_class%> 
+<%= f.datetime_local_field :onward_train_class %> 
+<%= f.datetime_local_field :onward_book_by %> 
+<%= f.datetime_local_field :return_mode %> 
+<%= f.datetime_local_field :return_flight_class %> 
+<%= f.datetime_local_field :return_train_class %> 
+<%= f.datetime_local_field :return_book_by %> 
+<%= f.datetime_local_field :supervisor %> 
+<%= f.datetime_local_field :employee_cell %> 
+<%= f.datetime_local_field :employee_cell %> 
+<%= f.datetime_local_field :alternate_approver %> 
+<%= f.datetime_local_field :alternate_approver_email %> 
+<%= f.datetime_local_field :reason_for_travel %> 
+<%= f.datetime_local_field :purpose_of_travel %> 
+<%= f.datetime_local_field :accommodation_required %> 
+<%= f.text_field :from_city %>
+<%= f.text_field :to_city %> 
+<%= f.submit "Create Travel Request" %> 
 <% end %> 
